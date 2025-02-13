@@ -38,3 +38,7 @@ docker-compose.override.yml
 *.log
 *.swp
 .DS_Store
+
+# Ignore build files
+backend/main
+backend/bin/
