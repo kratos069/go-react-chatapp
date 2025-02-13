@@ -29,7 +29,8 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     "http://localhost:5173",                       // Frontend origin in development
+		// AllowOrigins:     "http://localhost:5173",  // for development
+		AllowOrigins:     os.Getenv("CLIENT_URL"),                       // for Production from environment variables
 		AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS",             // Define HTTP methods
 		AllowHeaders:     "Origin, Content-Type, Accept, Authorization", // Include additional headers if needed
 		AllowCredentials: true,                                          // Enable cookies/credentials sharing
